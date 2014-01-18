@@ -1,5 +1,14 @@
 <%= stylesheet_link_tag "tables" %>
 
+<script language="javascript" type="text/javascript" src="../../js/jquery/jquery.js"></script>
+<script>
+$(document).ready(function(){
+   $("tr:even").addClass("even");
+   $("tr:odd").addClass("odd");
+});
+</script>
+
+<h1>Empresas</h1>
 <%= link_to "Adicionar", new_company_path %>
 <br />
 <table>

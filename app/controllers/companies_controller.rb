@@ -7,6 +7,23 @@ class CompaniesController < ApplicationController
 		@company = Company.new
     end
 
+	def update
+		@company = Company.find(params[:id])
+
+		if @company.update(params[:company].permit(
+			:name, 
+			:legal_name, 
+			:zip_code, 
+			:address, 
+			:phone, 
+			:company_type
+			))
+			render 'edit'
+		else
+			render 'edit'
+		end
+	end
+
 	def edit
 		@company = Company.find(params[:id])
 	end
@@ -19,7 +36,7 @@ class CompaniesController < ApplicationController
 	end    
 
     def create
-    	@company = Company.new(company_params)
+    	@company = Company.new(create_company_params)
   		
   		if @company.save
   			redirect_to @company
@@ -28,13 +45,20 @@ class CompaniesController < ApplicationController
     	end
     end
 
-	def company_params
-		params.require(:post).permit(:name, :legal_name, :zip_code, :address, :phone, :company_type)
+	def create_company_params
+		params.require(:post).permit(
+			:name, 
+			:legal_name, 
+			:zip_code, 
+			:address, 
+			:phone, 
+			:company_type
+			)
 	end
 
 	def show
-		@company = Company.find(params[:id])
+    	redirect_to @post
 	end
 
-	private :company_params
+	private :create_company_params
 end

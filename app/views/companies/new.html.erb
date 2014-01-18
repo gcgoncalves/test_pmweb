@@ -1,32 +1,3 @@
 <h1>Nova Empresa</h1>
-<%= form_for :post, url: companies_path do |f| %>
-  <p>
-    <%= f.label :"Nome Fantasia" %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :"Razão Social" %><br>
-    <%= f.text_field :legal_name %>
-  </p>
-  <p>
-    <%= f.label :CEP %><br>
-    <%= f.text_field :zip_code %>
-  </p>
-  <p>
-    <%= f.label :"Endereço" %><br>
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :"Telefone" %><br>
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :"Tipo" %><br>
-    <%= f.text_field :company_type %>
-  </p>
- 
-  <p>
-    <%= f.submit "Enviar" %>
-  </p>
-<% end %>
+<%= render 'form' %>
 <%= link_to 'Voltar', companies_path %>
