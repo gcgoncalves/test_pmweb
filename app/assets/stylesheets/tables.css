@@ -1,0 +1,19 @@
+table,th, td
+{
+border: 1px solid black;
+}
+table
+{
+border-collapse:collapse;
+}
+td
+{
+padding:0.5em;
+}
+th
+{
+background-color:#AAA;
+}
+tr:nth-of-type(odd) {
+  background-color:#ccc;
+} 
