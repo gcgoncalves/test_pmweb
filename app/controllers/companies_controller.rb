@@ -46,7 +46,7 @@ class CompaniesController < ApplicationController
     end
 
 	def create_company_params
-		params.require(:post).permit(
+		params.require(:company).permit(
 			:name, 
 			:legal_name, 
 			:zip_code, 
@@ -57,7 +57,8 @@ class CompaniesController < ApplicationController
 	end
 
 	def show
-    	redirect_to @post
+		@company = Company.find(params[:id])
+		render 'edit'
 	end
 
 	private :create_company_params
