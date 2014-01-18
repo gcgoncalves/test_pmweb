@@ -1,0 +1,27 @@
+<table>
+	<tr>
+  		<td><b>Nome Fantasia:</b></td>
+  		<td><%= @company.name %></td>
+	</tr>
+	<tr>
+  		<td><b>Razão Social:</b></td>
+  		<td><%= @company.legal_name %></td>
+	</tr>
+	<tr>
+  		<td><b>CEP:</b></td>
+  		<td><%= @company.zip_code %></td>
+	</tr>
+	<tr>
+  		<td><b>Endereço:</b></td>
+  		<td><%= @company.address %></td>
+	</tr>
+	<tr>
+  		<td><b>Telefone:</b></td>
+  		<td><%= @company.phone %></td>
+	</tr>
+	<tr>
+  		<td><b>Tipo:</b></td>
+  		<td><%= @company.company_type %></td>
+	</tr>
+</table>
+<%= link_to 'Voltar', companies_path %>
