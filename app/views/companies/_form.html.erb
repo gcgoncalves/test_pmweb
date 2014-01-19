@@ -1,30 +1,11 @@
-<%= form_for @company do |f| %>
-  <p>
-    <%= f.label :"Nome Fantasia" %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :"Razão Social" %><br>
-    <%= f.text_field :legal_name %>
-  </p>
-  <p>
-    <%= f.label :"CEP" %><br>
-    <%= f.text_field :zip_code %>
-  </p>
-  <p>
-    <%= f.label :"Endereço" %><br>
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :"Telefone" %><br>
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :"Tipo" %><br>
-    <%= f.text_field :company_type %>
-  </p>
- 
-  <p>
+<%= stylesheet_link_tag "forms" %>
+
+<%= semantic_form_for @company do |f| %>
+    <%= f.input :name, :label => "Nome Fantasia" %>
+    <%= f.input :legal_name, :label => "Razão Social" %>
+    <%= f.input :zip_code, :label => "CEP", :mask => '99.999-999' %>
+    <%= f.input :address, :label => "Endereço" %>
+    <%= f.input :phone, :label => "Telefone", :mask => '9999-9999' %>
+    <%= f.input :company_type, :label => "Tipo" %>
     <%= f.submit "Enviar" %>
-  </p>
 <% end %>

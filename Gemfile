@@ -43,3 +43,15 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'will_paginate', '~> 3.0.5'
+
+gem 'has_scope'
+
+gem 'formtastic'
+
+gem 'ranked-model'
+
+ gem 'bootstrap-sass'
+ 
+ gem 'formtastic-bootstrap'
