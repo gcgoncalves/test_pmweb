@@ -14,12 +14,12 @@ $(document).ready(function(){
 <%= will_paginate @companies %>
 <table class='datatable'>
   <tr>
-    <th>Nome Fantasia</th>
-    <th>Razão Social</th>
-    <th>CEP</th>
-    <th>Endereço</th>
-    <th>Telefone</th>
-    <th>Tipo</th>
+    <th><%= sortable "name", "Nome Fantasia" %></th>
+    <th><%= sortable "legal_name", "Razão Social" %></th>
+    <th><%= sortable "zip_code", "CEP" %></th>
+    <th><%= sortable "address", "Endereço" %></th>
+    <th><%= sortable "phone", "Telefone" %></th>
+    <th><%= sortable "type", "Tipo" %></th>
     <th>Editar</th>
     <th>Remover</th>
   </tr>

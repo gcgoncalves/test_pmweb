@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
+    helper_method :sort_column, :sort_direction
+    
     def index
-        @companies = Company.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+        @companies = Company.paginate(:page => params[:page], :per_page => 5).order(sort_column + " " + sort_direction)
     end
 
     def new
@@ -62,4 +64,14 @@ class CompaniesController < ApplicationController
 	end
 
 	private :create_company_params
+    
+    private
+    
+    def sort_column
+        Company.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+    
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end
