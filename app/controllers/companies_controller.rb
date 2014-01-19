@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
     def index
-        @companies = Company.paginate(:page => params[:page], :per_page => 10)
+        @companies = Company.paginate(:page => params[:page], :per_page => 5).order('id DESC')
     end
 
     def new
@@ -18,7 +18,7 @@ class CompaniesController < ApplicationController
 			:phone, 
 			:company_type
 			))
-			render 'edit'
+			redirect_to companies_path
 		else
 			render 'edit'
 		end
@@ -39,7 +39,7 @@ class CompaniesController < ApplicationController
     	@company = Company.new(create_company_params)
   		
   		if @company.save
-  			redirect_to @company
+			redirect_to companies_path
  		else
     		render 'new'
     	end

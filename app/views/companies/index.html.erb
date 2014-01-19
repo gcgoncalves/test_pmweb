@@ -12,7 +12,7 @@ $(document).ready(function(){
 <h1>Empresas</h1>
 <%= link_to "Adicionar", new_company_path %> 
 <%= will_paginate @companies %>
-<table>
+<table class='datatable'>
   <tr>
     <th>Nome Fantasia</th>
     <th>Razão Social</th>
