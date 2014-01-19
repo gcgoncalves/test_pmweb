@@ -46,8 +46,6 @@ end
 
 gem 'will_paginate', '~> 3.0.5'
 
-gem 'has_scope'
-
 gem 'formtastic'
 
 gem 'ranked-model'
@@ -57,3 +55,5 @@ gem 'bootstrap-sass'
 gem 'formtastic-bootstrap'
 
 gem 'jquery-datatables-rails'
+
+gem "ransack" 

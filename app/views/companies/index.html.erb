@@ -10,16 +10,17 @@ $(document).ready(function(){
 
 
 <h1>Empresas</h1>
+
 <%= link_to "Adicionar", new_company_path %> 
 <%= will_paginate @companies %>
 <table class='datatable'>
   <tr>
-    <th><%= sortable "name", "Nome Fantasia" %></th>
-    <th><%= sortable "legal_name", "Razão Social" %></th>
-    <th><%= sortable "zip_code", "CEP" %></th>
-    <th><%= sortable "address", "Endereço" %></th>
-    <th><%= sortable "phone", "Telefone" %></th>
-    <th><%= sortable "type", "Tipo" %></th>
+    <th>Nome Fantasia</th>
+    <th>Razão Social</th>
+    <th>CEP</th>
+    <th>Endereço</th>
+    <th>Telefone</th>
+    <th>Tipo</th>
     <th>Editar</th>
     <th>Remover</th>
   </tr>
@@ -38,3 +39,18 @@ $(document).ready(function(){
     </tr>
   <% end %>
 </table>
+<p>
+    <%= search_form_for @search do |f| %>
+      <%= f.label :"Nome Fantasia" %>
+      <%= f.text_field :name_cont %>
+      <%= f.label :"Razão Social" %>
+      <%= f.text_field :legal_name_cont %>
+      <%= f.label :"CEP" %>
+      <%= f.text_field :zip_code_cont %>
+      <%= f.label :"Endereço" %>
+      <%= f.text_field :address_cont %>
+      <%= f.label :"Tipo" %>
+      <%= f.text_field :company_type_cont %>
+      <%= f.submit "Filtrar" %>
+    <% end %>
+</p>
