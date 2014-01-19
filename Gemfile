@@ -60,3 +60,8 @@ gem 'formtastic-bootstrap'
 gem 'jquery-datatables-rails'
 
 gem "ransack" 
+
+group :production do
+  gem 'rails_12factor'
+end
+
