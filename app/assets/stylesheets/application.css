@@ -10,10 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require formtastic-bootstrap
+ *= require dataTables/jquery.dataTables
  */
-*= require formtastic-bootstrap
-*= require dataTables/jquery.dataTables
-
 .pretty th .current {
   padding-right: 12px;
   background-repeat: no-repeat;
